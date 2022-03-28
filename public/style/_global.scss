@@ -1,0 +1,24 @@
+/*Styling untuk tampilan global*/
+
+body{
+    font-family:"Poppins",sans-serif;
+}
+
+/*Mengatur jarak antara navigasi dengan content*/
+.page-content {
+    margin-top:100px;
+}
+
+/*Footer*/
+footer{
+    border-top:1px solid #E4E4E4;
+    margin-top:150px;
+
+    p{
+        color: #979797;
+    }
+}
+
+.form-control{
+    background-color: #f3f3f3;
+}
