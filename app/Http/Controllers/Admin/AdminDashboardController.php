@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Transaction;
+
 class AdminDashboardController extends Controller
 {
     /**
@@ -18,7 +19,7 @@ class AdminDashboardController extends Controller
         $customer    = User::count();
         $revenue     = Transaction::sum('total_price');
         $transaction = Transaction::count();
-        return view('pages.admin.dashboard',compact('customer','revenue','transaction'));
+        return view('pages.admin.dashboard', compact('customer', 'revenue', 'transaction'));
     }
 
     /**

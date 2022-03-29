@@ -33,10 +33,16 @@
                         <a href="{{route('category.index')}}"
                             class="list-group-item list-group-item-action  {{Request::is('admin/category') || Request::is('admin/category/create') ? 'active':''}}">Categories
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action">Transactions</a>
+                        <a href="{{route('transaction.index')}}"
+                            class="list-group-item list-group-item-action">Transactions</a>
                         <a href="{{route('user.index')}}"
                             class="list-group-item list-group-item-action  {{Request::is('admin/user') || Request::is('admin/user/create') ? 'active':''}}">Users</a>
-                        <a href="/index.html" class="list-group-item list-group-item-action">Sign Out</a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"
+                            class="list-group-item list-group-item-action">Sign Out</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </div>
                 </div>
 
@@ -68,7 +74,12 @@
                                         <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
                                         <a href="/dashboard-account.html" class="dropdown-item">Settings</a>
                                         <div class="dropdown-devider"></div>
-                                        <a href="/" class="dropdown-item">Logout</a>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();" class="dropdown-item">Log Out</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
                                     </div>
                                 </li>
 

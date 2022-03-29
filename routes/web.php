@@ -11,12 +11,14 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\DashboardProductController;
-use App\Http\Controllers\DashboardSettingController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\ProductGalleryController;
+use App\Http\Controllers\Admin\TransactionController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\DashboardProductController;
+use App\Http\Controllers\DashboardSettingController;
+
 use App\Http\Controllers\DashboardTransactionController;
 /*
 |--------------------------------------------------------------------------
@@ -60,14 +62,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard/accounts', [DashboardSettingController::class, 'account'])->name('dashboard-settings-account');
     Route::post('/dashboard/accounts/{redirect}', [DashboardSettingController::class, 'update'])->name('dashboard-settings-redirect');
 });
+
 Route::prefix('admin')
-    ->middleware(['auth', 'admin'])
+    ->middleware(['auth', 'Admin'])
     ->group(function () {
         Route::get('/', [AdminDashboardController::class, 'index'])->name('admin-dashboard');
         Route::resource('/category', AdminCategoryController::class);
         Route::resource('/user', UserController::class);
         Route::resource('/product', ProductController::class);
         Route::resource('/product-gallery', ProductGalleryController::class);
+        Route::resource('transaction', TransactionController::class);
     });
 
 Auth::routes();

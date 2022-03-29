@@ -7,7 +7,7 @@ Store Dashboard
 <div class="section-content section-dashboard-home" data-aos="fade-up">
     <div class="container-fluid">
         <div class="dashboard-heading">
-            <h2 class="dashboard-title">Admin Dashboard Broo</h2>
+            <h2 class="dashboard-title">Admin Dashboard</h2>
             <p class="dashboard-subtitle">This is BWAStore Administration Panel</p>
         </div>
         <div class="dashboard-content">
@@ -37,10 +37,10 @@ Store Dashboard
                     </div>
                 </div>
             </div>
-            <div class="row mt-3">
+            {{-- <div class="row mt-3">
                 <div class="col-12 mt-2">
                     <h5 class="mb-3">Recent Transaction</h5>
-                    @foreach ($transaction_data as $transaction)
+                    @foreach ($transactions as $transaction)
                     <a href="{{router('dashboard-transaction-details',$transaction->id)}}"
                         class="card card-list d-block">
                         <div class="card-body">
@@ -60,7 +60,7 @@ Store Dashboard
                     </a>
                     @endforeach
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
