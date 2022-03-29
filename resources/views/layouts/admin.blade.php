@@ -69,13 +69,14 @@
                                         <img src="/images/icon-user.png" alt=""
                                             class="rounded-circle mr-2 profile-picture" />
 
-                                        Hi, Fikri</a>
+                                        Hi, {{Auth::user()->name}}</a>
                                     <div class="dropdown-menu">
-                                        <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
+                                        <a href="{{route('admin-dashboard')}}" class="dropdown-item">Dashboard</a>
                                         <a href="/dashboard-account.html" class="dropdown-item">Settings</a>
                                         <div class="dropdown-devider"></div>
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();" class="dropdown-item">Log Out</a>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                            class="dropdown-item">Log Out</a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                             class="d-none">
                                             @csrf
@@ -89,7 +90,7 @@
 
                             <ul class="navbar-nav d-block d-lg-none">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Hi, Fikri</a>
+                                    <a href="#" class="nav-link">Hi, {{Auth::user()->name}}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href=" " class="nav-link d-inline-block"> Cart </a>
