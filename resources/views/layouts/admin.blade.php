@@ -67,9 +67,8 @@
                                     <a href="#" class="nav-link" id="navbarDropdown" role="button"
                                         data-toggle="dropdown">
                                         <img src="/images/icon-user.png" alt=""
-                                            class="rounded-circle mr-2 profile-picture" />
-
-                                        Hi, {{Auth::user()->name}}</a>
+                                            class="rounded-circle mr-2 profile-picture" /> Hi,
+                                        {{Auth::user()->name}}</a>
                                     <div class="dropdown-menu">
                                         <a href="{{route('admin-dashboard')}}" class="dropdown-item">Dashboard</a>
                                         <a href="/dashboard-account.html" class="dropdown-item">Settings</a>
